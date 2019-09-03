@@ -4,10 +4,23 @@
       <b-form-group
         label="Currency Name"
       >
-        <b-form-input
-        v-model="currencyName"
-        >
-        </b-form-input>
+        <b-form-select v-model="currencyName" class="mb-3">
+          <option :value="null">Please select an option</option>
+          <option value="CAD">$ CAD</option>
+          <option value="HKD">HK $</option>
+          <option value="EUR">€ EUR</option>
+          <option value="ISK">ISK</option>
+          <option value="PHP">PHP</option>
+          <option value="DKK">DKK</option>
+          <option value="AUD">AUD</option>
+          <option value="SGD">SGD</option>
+          <option value="GBP">GBP</option>
+          <option value="CHF">CHF</option>
+          <option value="INR">INR</option>
+          <option value="MYR">MYR</option>
+          <option value="JPY">JPY</option>
+          <option value="KRW">KRW</option>
+        </b-form-select>
       </b-form-group>
       <b-button type="submit" variant="primary" class="float-right">Submit</b-button>
      </b-form>
