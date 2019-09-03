@@ -23,13 +23,15 @@
           {{oneCurrency.currencyName}}
           {{oneCurrency.value.toFixed(2)}}
         </h1>
-          <b-button variant="danger" class="float-right">Delete</b-button>
+          <b-button variant="danger" class="float-right" @click="deleteCurrency">Delete</b-button>
         </b-col>
     </b-row>
   </b-card>
 </template>
 
 <script>
+const baseUrl = `http://localhost:3000/api/currencies`
+import axios from 'axios'
 export default {
   methods: {
 
@@ -42,7 +44,15 @@ export default {
   },
   methods: {
     deleteCurrency() {
-
+      // console.log(this.oneCurrency)
+      axios.delete(`${baseUrl}/${this.oneCurrency._id}`)
+        .then((data) => {
+          // console.log(oneCurrency)
+          this.$emit('deleted')
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     }
   }
 }

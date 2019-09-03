@@ -10,11 +10,12 @@
         </b-form-input>
        </b-input-group>
        <br>
-     <ListCurrencies v-for="dataCurrency in dataCurrencies" :key="dataCurrency._id" :oneCurrency="dataCurrency" :input="inputValue"></ListCurrencies>
-    <b-button style="marginTop: 20px;">
-      Add new Currency
-    </b-button>
+     <ListCurrencies v-for="dataCurrency in dataCurrencies" :key="dataCurrency._id" :oneCurrency="dataCurrency" :input="inputValue" @deleted="onAdded"></ListCurrencies>
+      <b-button style="marginTop: 20px;" v-b-modal.modal-1>
+        Add new Currency
+      </b-button>
    </b-container>
+   <AddCurrencyModal @added="onAdded"></AddCurrencyModal>
   </div>
 </template>
 
@@ -22,6 +23,7 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import ListCurrencies from '../components/ListCurrencies'
+import AddCurrencyModal from '../components/AddCurrencyModal'
 import axios from 'axios'
 let baseUrl = 'http://localhost:3000/api/currencies'
 
@@ -29,7 +31,8 @@ export default {
   name: 'home',
   components: {
     HelloWorld,
-    ListCurrencies
+    ListCurrencies,
+    AddCurrencyModal
   },
    data () {
     return {
@@ -50,6 +53,11 @@ export default {
         .catch((error) => {
           console.log(error)
         })
+    },
+    onAdded(value) {
+      console.log('masuk sini pak')
+      console.log(value)
+      this.getCurrencies()
     }
   }
 }
