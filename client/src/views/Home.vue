@@ -21,7 +21,7 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+// import HelloWorld from '@/components/HelloWorld.vue'
 import ListCurrencies from '../components/ListCurrencies'
 import AddCurrencyModal from '../components/AddCurrencyModal'
 import axios from 'axios'
@@ -30,7 +30,7 @@ let baseUrl = 'http://localhost:3000/api/currencies'
 export default {
   name: 'home',
   components: {
-    HelloWorld,
+    // HelloWorld,
     ListCurrencies,
     AddCurrencyModal
   },

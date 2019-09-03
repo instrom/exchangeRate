@@ -20,6 +20,7 @@
           <option value="MYR">MYR</option>
           <option value="JPY">JPY</option>
           <option value="KRW">KRW</option>
+          <option value="IDR">IDR</option>
         </b-form-select>
       </b-form-group>
       <b-button type="submit" variant="primary" class="float-right">Submit</b-button>
@@ -31,6 +32,7 @@
 const baseUrl = 'http://localhost:3000/api/currencies/'
 import axios from 'axios'
 export default {
+  name: 'AddCurrencyModal',
   data() {
     return {
       currencyName: '',
