@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { shallowMount, mount, createLocalVue } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
 import BootstrapVue from 'bootstrap-vue'
 import Home from '../../src/views/Home.vue'
 

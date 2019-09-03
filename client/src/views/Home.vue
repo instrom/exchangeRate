@@ -25,7 +25,7 @@
 import ListCurrencies from '../components/ListCurrencies'
 import AddCurrencyModal from '../components/AddCurrencyModal'
 import axios from 'axios'
-let baseUrl = 'http://localhost:3000/api/currencies'
+let baseUrl = 'http://35.187.253.44/api/currencies'
 
 export default {
   name: 'home',

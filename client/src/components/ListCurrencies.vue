@@ -30,7 +30,7 @@
 </template>
 
 <script>
-const baseUrl = `http://localhost:3000/api/currencies`
+const baseUrl = `http://35.187.253.44/api/currencies`
 import axios from 'axios'
 export default {
   name: 'ListCurrencies',
