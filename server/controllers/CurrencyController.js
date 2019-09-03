@@ -36,5 +36,14 @@ class CurrencyController {
       })
       .catch(next)
   }
+
+  static delete(req,res,next) {
+    Currency.findByIdAndDelete(req.params.id)
+      .then((deleted) => {
+        console.log('sukses delete')
+        res.status(200).json(deleted)
+      })
+      .catch(next)
+  }
 }
 module.exports = CurrencyController
